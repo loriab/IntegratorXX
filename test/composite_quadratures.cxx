@@ -1,3 +1,5 @@
+#include <numeric>
+
 #include "catch2/catch_all.hpp"
 
 #include <integratorxx/quadratures/radial.hpp>
