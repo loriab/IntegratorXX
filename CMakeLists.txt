@@ -17,7 +17,7 @@ endif()
 target_compile_features( integratorxx ${INTEGRATORXX_TARGET_TYPE} cxx_std_17 )
 target_include_directories( integratorxx
   ${INTEGRATORXX_TARGET_TYPE} 
-    $<INSTALL_INTERFACE:include>
+    $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
     $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
 )
 
