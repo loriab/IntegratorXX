@@ -13,6 +13,8 @@ else()
   set(INTEGRATORXX_TARGET_TYPE PUBLIC)
 endif()
 
+include( GNUInstallDirs )
+
 # Target features
 target_compile_features( integratorxx ${INTEGRATORXX_TARGET_TYPE} cxx_std_17 )
 target_include_directories( integratorxx
@@ -32,7 +34,6 @@ endif()
 
 # INSTALL rules
 add_library( IntegratorXX::IntegratorXX ALIAS integratorxx )
-include( GNUInstallDirs )
 set( INSTALL_CONFIGDIR ${CMAKE_INSTALL_LIBDIR}/cmake/IntegratorXX )
 
 # Targets
@@ -41,6 +42,7 @@ install(TARGETS integratorxx
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 
 set_target_properties( integratorxx PROPERTIES EXPORT_NAME IntegratorXX )
